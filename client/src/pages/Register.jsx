@@ -20,13 +20,37 @@ const Register = () => {
       };
 
     return (
-        <form onSubmit={handleSubmit}>
-          <h2>Register</h2>
-          <input placeholder="Name" type="text" onChange={(e) => setForm({ ...form, name: e.target.value })} />
-          <input placeholder="Email" type="email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
-          <input placeholder="Password" type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
-          <button type="submit">Register</button>
-        </form>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+          <h2 className="text-2xl font-semibold text-center mb-6 text-blue-700">Welcome 👋</h2>
+         
+          <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+                  <label className="block text-gray-700">Name</label>
+                       <input placeholder="Name" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={form.name}type="text" onChange={(e) => setForm({ ...form, name: e.target.value })} required/>
+                      
+          </div>
+              <div>
+                  <label className="block text-gray-700">Email</label>
+                       <input placeholder="Email" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      value={form.email}type="email" onChange={(e) => setForm({ ...form, email: e.target.value })} required/>
+                      
+          </div>
+          <div>
+              <label className="block text-gray-700">Password</label>
+                  <input placeholder="Password"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={form.password} type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} required/>
+          </div>
+            <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+            >Register</button>
+          </form>
+          <p className="mt-4 text-sm text-center text-gray-500">
+            Already have an account? <a href="/login" className="text-blue-600 hover:underline">Login</a>
+          </p>
+        </div>
+      </div>
       );
 }
 export default Register;
