@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useAuth } from '../context/AuthContext';
 import API from '../utils/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  console.log('Login Called');
     const {login} = useAuth();
     const navigate= useNavigate()
     const [form, setForm] = useState({ email: '', password: '' });
@@ -41,7 +42,7 @@ const Login = () => {
           >Login</button>
         </form>
         <p className="mt-4 text-sm text-center text-gray-500">
-          Don’t have an account? <a href="/register" className="text-blue-600 hover:underline">Register</a>
+          Don’t have an account? <Link to="/register" className="text-blue-600 hover:underline">Register</Link>
         </p>
       </div>
     </div>
