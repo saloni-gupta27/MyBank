@@ -13,7 +13,7 @@ const Register = () => {
         try {
           const res = await API.post('/auth/register', form);
           login(res.data.user, res.data.token);
-          navigate('/dashboard');
+          navigate('/');
         } catch (err) {
           alert(err.response?.data?.message || 'Registration failed');
         }
