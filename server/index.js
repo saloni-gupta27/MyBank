@@ -10,11 +10,8 @@ import txnRoutes from './routes/transaction.js';
 dotenv.config();
 const app = express();
 
-const allowedOrigins =["my-bank-eight-umber.vercel.app", "http://localhost:3000"]
-app.use(cors({
-  origin:allowedOrigins,
-  credentials:true
-}));
+//const allowedOrigins =["my-bank-eight-umber.vercel.app", "http://localhost:3000"]
+app.use(cors());
 app.use(express.json()); // for parsing application/json
 
 app.use('/api/auth', authRoutes);
